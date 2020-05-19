@@ -3,7 +3,7 @@ package Authentication
 import "github.com/go-redis/redis/v7"
 
 type RedisService struct {
-	Auth   Interface
+	Auth   AuthInterface
 	Client *redis.Client
 }
 
