@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-type Interface interface {
+type AuthInterface interface {
 	FetchAuth(string) (uint64, error)
 }
 
@@ -16,7 +16,7 @@ type ClientData struct {
 	client *redis.Client
 }
 
-var _ Interface = &ClientData{}
+var _ AuthInterface = &ClientData{}
 
 func NewAuth(client *redis.Client) *ClientData {
 	return &ClientData{client: client}
